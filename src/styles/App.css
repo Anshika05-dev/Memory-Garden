@@ -24,10 +24,19 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   border-radius: 3rem;
 }
+
 .app-sub-container h1{
   text-align: center;
   margin-bottom: 2rem;
 }
+
+.life-stage {
+  font-size: 20px;
+display: flex;
+gap: 1rem;
+align-items: center;
+}
+
 .note-input-form {
   display: flex;
   flex-direction: column;
@@ -103,3 +112,60 @@
   border-radius: 8px;
   margin-bottom: 5px;
 }
+
+.progress-bar {
+  height: 6px;
+  width: 100%;
+  background: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #72c472;
+  transition: width 1s linear;
+}
+
+.note-card.grow {
+  animation: growIn 0.5s ease-out;
+}
+
+@keyframes growIn {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.music-toggle {
+  background-color: #f5f5f5;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+}
+
+.music-toggle:hover {
+  background-color: #e0e0e0;
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.volume-control input[type="range"] {
+  width: 150px;
+}
+
