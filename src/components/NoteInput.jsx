@@ -6,7 +6,7 @@ const NoteInput = ({ onAdd }) => {
   const [images, setImages] = useState([]);
 
   const handleImageChange = (e) => {
-    const files = Array.from(e.target.files).slice(0, 3); // max 3 images
+    const files = Array.from(e.target.files).slice(0, 1); // max 3 images
     const readers = [];
 
     files.forEach((file) => {
