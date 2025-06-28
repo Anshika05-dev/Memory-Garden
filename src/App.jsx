@@ -18,10 +18,11 @@ const App = () => {
     saveNotes(notes);
   }, [notes]);
 
-  const addNote = (text) => {
-    const newNote = {
+  const addNote = (text, images = []) => {
+        const newNote = {
       id: Date.now(),
       text,
+      images,
       createdAt: Date.now(),
       lastTouched: Date.now(),
       expiresIn: 2 * 60 * 1000, // 2 minutes

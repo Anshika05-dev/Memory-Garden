@@ -9,7 +9,6 @@ const NoteCard = ({ note, onTouch, onRemove }) => {
     const interval = setInterval(() => {
       const remaining = note.expiresIn - (Date.now() - note.lastTouched);
       setTimeLeft(remaining);
-
       if (remaining <= 0) {
         onRemove(note.id);
       }
@@ -39,6 +38,19 @@ const NoteCard = ({ note, onTouch, onRemove }) => {
       title="Click to refresh this memory"
     >
       <p>{note.text}</p>
+      {note.images && note.images.length > 0 && (
+        <div className="image-preview">
+          {note.images.map((img, idx) => (
+            <img
+              key={idx}
+              src={img}
+              alt={`memory-${idx}`}
+              className="note-image"
+            />
+          ))}
+        </div>
+      )}
+
       <small>⏳ {formatTime(timeLeft)}</small>
     </div>
   );
