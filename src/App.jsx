@@ -44,8 +44,10 @@ const App = () => {
 
   return (
     <div className="app-container">
+      <div className="app-sub-container">
       <h1>🪴 Memory Garden</h1>
       <NoteInput onAdd={addNote} />
+      </div>
       <NoteList notes={notes} onTouch={updateTouch} onRemove={removeNote} />
     </div>
   );

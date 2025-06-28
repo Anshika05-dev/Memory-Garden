@@ -5,8 +5,29 @@
   justify-content: center;
   gap: 2rem;
   height: 100vh;
+  background: linear-gradient(135deg, #d5f4e6, #f4dada, #e4c1f9);
+  animation: gradientShift 10s ease infinite;
 }
 
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.app-sub-container{
+  background-color: rgb(242, 249, 255);
+  padding: 2rem;
+  width: 26rem;
+  border: 1px solid gray;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 3rem;
+}
+.app-sub-container h1{
+  text-align: center;
+  margin-bottom: 2rem;
+}
 .note-input-form {
   display: flex;
   flex-direction: column;
@@ -20,7 +41,8 @@
   font-size: 16px;
   border-radius: 8px;
   outline: none;       
-  border: 1px solid #ccc;
+  background-color: rgb(231, 244, 255);
+  border: none;
 }
 
 .note-input-form button {
@@ -35,8 +57,20 @@
 
 .note-list {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
   gap: 20px;
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.note-list.count-1,
+.note-list.count-0{
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+.note-list.count-2 {
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
 }
 
 .note-card {

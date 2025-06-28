@@ -3,7 +3,7 @@ import NoteCard from "./NoteCard";
 
 const NoteList = ({ notes, onTouch, onRemove }) => {
   return (
-    <div className="note-list">
+    <div className={`note-list count-${notes.length}`}>
       {notes.length === 0 ? (
         <p>📝 No memories yet. Plant one!</p>
       ) : (
